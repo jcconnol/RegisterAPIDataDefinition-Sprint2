@@ -1,3 +1,7 @@
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+DROP TABLE IF EXISTS "employee";
+
 CREATE TABLE employee (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
   employeeid character varying(32) NOT NULL DEFAULT(''),
@@ -13,6 +17,12 @@ CREATE TABLE employee (
   OIDS=FALSE
 );
 
-CREATE INDEX ix_employee_employeeid
+CREATE INDEX IF NOT EXISTS ix_employee_employeeid
   ON employee
   USING btree(employeeid);
+
+INSERT INTO employee (employeeid, firstname, lastname, password, managerid)
+VALUES (100, 'Ashley', 'Cain', 'ashleycain', uuid_generate_v4()), 
+	   (101, 'Daninthia', 'Fox', 'daninthiafox', uuid_generate_v4()),
+	   (102, 'John', 'Connolly', 'johnconnolly', uuid_generate_v4()),
+	   (103, 'Mae', 'Larrea', 'maelarrea', uuid_generate_v4());
