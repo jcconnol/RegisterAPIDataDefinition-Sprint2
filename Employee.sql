@@ -22,7 +22,10 @@ CREATE INDEX IF NOT EXISTS ix_employee_employeeid
   USING btree(employeeid);
 
 INSERT INTO employee (employeeid, firstname, lastname, password, managerid)
-VALUES (100, 'Ashley', 'Cain', 'ashleycain', uuid_generate_v4()), 
-	   (101, 'Daninthia', 'Fox', 'daninthiafox', uuid_generate_v4()),
-	   (102, 'John', 'Connolly', 'johnconnolly', uuid_generate_v4()),
-	   (103, 'Mae', 'Larrea', 'maelarrea', uuid_generate_v4());
+VALUES (100, 'test', 'test', 'test', uuid_generate_v4()),
+	   (101, 'Ashley', 'Cain', 'ashleycain', uuid_generate_v4()), 
+	   (102, 'Daninthia', 'Fox', 'daninthiafox', uuid_generate_v4()),
+	   (103, 'John', 'Connolly', 'johnconnolly', uuid_generate_v4()),
+	   (104, 'Mae', 'Larrea', 'maelarrea', uuid_generate_v4()),
+	   (105, 'Marissa', 'Montes', 'marissamontes', uuid_generate_v4());
+	   
