@@ -9,10 +9,10 @@ CREATE TABLE transaction (
   totalAmt int NOT NULL DEFAULT(0),
   type character varying(2) NOT NULL DEFAULT(''), --'s' for sale 'r' for return
   refid character varying(32) NOT NULL DEFAULT(''), 
-  CONSTRAINT employee_pkey PRIMARY KEY (id)
-) 
+  CONSTRAINT transaction_pkey PRIMARY KEY (id)
+);
 
-CREATE INDEX IF NOT EXISTS ix_employee_employeeid
+CREATE INDEX IF NOT EXISTS ix_transaction_employeeid
   ON employee
   USING btree(employeeid);
 
